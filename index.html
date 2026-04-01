@@ -11,7 +11,7 @@
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: #f2f2f2; /* Slightly darker than white */
+    background-color: #f2f2f2;
     color: #333;
 }
 header {
@@ -50,6 +50,7 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    cursor: pointer;
 }
 section {
     padding: 60px 20px;
@@ -61,7 +62,7 @@ section {
     margin: 15px;
 }
 .benefits {
-    background: #eaeaea; /* Slightly darker section */
+    background: #eaeaea;
 }
 .contact {
     background: #1F3D2B;
@@ -79,6 +80,12 @@ iframe {
     border: 0;
     border-radius: 10px;
 }
+
+/* Gallery hidden by default */
+#gallery {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .products img {
         width: 90%;
@@ -116,10 +123,15 @@ We provide affordable, durable, all-weather canvas solutions designed for comfor
 <section id="products" class="products">
 <h2>Our Products</h2>
 
-<!-- Your 3 Added Images -->
-<img src="image1.jpg" alt="Caravan Side Tent">
-<img src="image2.jpg" alt="Rooftop Tent Setup">
-<img src="image3.jpg" alt="Modern Caravan Tent">
+<!-- Button to open images -->
+<button class="btn" onclick="toggleGallery()">View Our Work</button>
+
+<!-- Hidden gallery -->
+<div id="gallery">
+    <img src="image1.jpg" alt="Caravan Side Tent">
+    <img src="image2.jpg" alt="Rooftop Setup">
+    <img src="image3.jpg" alt="Caravan Tent Setup">
+</div>
 
 <p>
 ✔ Caravan Tents<br>
@@ -160,28 +172,19 @@ src="https://www.google.com/maps?q=No+4+Reynonds+Straat+Falconridge+Valutacentre
 
 <footer>
 <p>&copy; 2026 Canvas Camping | All Rights Reserved</p>
-
 </footer>
-<section id="products" class="products">
-<h2>Our Products</h2>
 
-<!-- Updated Images -->
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ81SCWwItxkSJFHNBhJElHcyXnICilA2ciEQ&s" alt="Caravan Side Tent">
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgKAkP9xqnXV1818CmWZUHBr6BW_bI4FO-yw&s" alt="Rooftop Tent Setup">
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpCaigA5KRBoazQW1td2SuDW9ySoPnc-tvpw&s" alt="Modern Caravan Tent">
-
-<p>
-✔ Caravan Tents<br>
-✔ Caravan Side Panels<br>
-✔ Rooftop Tents<br>
-✔ Travel Blankets<br>
-✔ Custom Canvas Solutions
-</p>
-
-</section>
+<!-- Simple JS for button -->
+<script>
+function toggleGallery() {
+    var gallery = document.getElementById("gallery");
+    if (gallery.style.display === "none") {
+        gallery.style.display = "block";
+    } else {
+        gallery.style.display = "none";
+    }
+}
+</script>
 
 </body>
-
 </html>
